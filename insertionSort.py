@@ -19,6 +19,7 @@ def insertionSort(arr):
         j = i-1
         # compare with predecessor 
         while j >=0 and key < arr[j]:
+            # Move the greater elements one position up to make space for the swapped element
             arr[j+1] = arr[j]
             j = j-1
         arr[j+1] = key
