@@ -13,13 +13,13 @@ def helper(numbers, start, end, index):
     if start == end:  # No greater condition is needed, as empty partition doesnt exist in this case
         return
     # arbitary worker
-    # Get a random index and swap it with pivot
+    # Get a random index and swap it with pivot to not go to O(n^2) in worst case
     randind = random.randint(start,end)
     numbers[start], numbers[randind] = numbers[randind], numbers[start]
     orange = lomuto_2way(numbers, start, end)
-    #swap pivot element
+    #swap pivot element after lomuto partitioning
     numbers[orange],numbers[start] = numbers[start],numbers[orange]
-    # concentrate on partition that has index
+    # concentrate only on partition that has index
     if orange == index:  #best case
         return
     elif orange > index:
@@ -39,6 +39,7 @@ def kth_largest_in_an_array(numbers, k):
     helper(numbers, 0, len(numbers)-1, len(numbers)-k) # As kth largest lies in n-k index
     return numbers[len(numbers)-k]
 
+#Complexity: O(n)
 #Input
 #{
 #"numbers": [5, 1, 10, 3, 2],
