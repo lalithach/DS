@@ -1,12 +1,15 @@
 import random
 # 3way lomuto partitioning
 def lomuto(A, start, end):
+	# orange zone indicates smaller region
+	# blue zone indicates elements equal to pivot
 	orange=start
 	blue = start
 	pivot = A[start]
 	for green in range(start+1, end+1) :  
 		if A[green] == pivot:
-			# When initial element after pivot is lesser, then orange zone increases. Since blue region falls after orange
+			# When initial element after pivot is lesser, then orange zone increases.
+			# Since blue region falls after orange, need to start blue zone after orange
 			if blue==0:
 				blue = orange + 1
 			else:
