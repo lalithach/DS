@@ -1,27 +1,43 @@
-# Online Python-3 Compiler (Interpreter)
-def intersect_3sorted_arr(A, B,C):
-    m = len(A)
-    n = len(B)
-    o = len(C)
+
+def find_intersection(arr1, arr2, arr3):
+    """
+    Args:
+     arr1(list_int32)
+     arr2(list_int32)
+     arr3(list_int32)
+    Returns:
+     list_int32
+    """
+    # Write your code here.
+
     i,j,k=0,0,0
     result = []
-    while i<m and j<n and k<o:
-        if A[i] == B[j] and B[j] == C[k]:
-            result.append(A[i])
+    
+    # Return [-1] when one of the arrays is empty
+    if len(arr1) == 0 or len(arr2) == 0 or len(arr3) == 0:
+        return [-1]
+    while i<len(arr1) and j<len(arr2) and k<len(arr3):
+        if arr1[i] == arr2[j] and arr2[j] == arr3[k]:
+            result.append(arr1[i])
             i+=1
             j+=1
             k+=1
-        elif A[i]<B[j]:
+        elif arr1[i]<arr2[j]:
         # if smaller element, move further such that equal element may be found
             i+=1
-        elif B[j]<C[k]:
+        elif arr2[j]<arr3[k]:
             j+=1
         else:
             k+=1
+            
+    # return [-1] when no intersection elements are found        
+    if len(result) == 0:
+        result.append(-1)
+        
     return result
 
-#A=[1,2,5]
-#B=[5,7]
-#C=[1,3,4,5]
-#print(intersect_3sorted_arr(A,B,C))
+#I/P:
+#[5,6]
+#[1,5,6]
+#[1,2,3,4,5]
 #O/P:[5]
