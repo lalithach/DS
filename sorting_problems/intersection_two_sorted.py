@@ -1,4 +1,6 @@
 # Online Python-3 Compiler (Interpreter)
+
+# This code looks similar to combine phase in merge sort with few updates.
 def intersect_sorted_arr(A, B):
     m = len(A)
     n = len(B)
