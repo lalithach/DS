@@ -10,7 +10,7 @@ def lomuto(A, start, end):
 		if A[green] == pivot:
 			# When initial element after pivot is lesser, then orange zone increases.
 			# Since blue region falls after orange, need to start blue zone after orange
-			if blue==0:
+			if blue==start:
 				blue = orange + 1
 			else:
 				blue+=1
