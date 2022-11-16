@@ -2,7 +2,8 @@
 # recursive calls. Instead, it reuses the same slate and the main array by
 # adding and popping elements to slate
 
-# This is for distinct elements in the array
+# This is for n distinct elements in the array
+# Time complexity : O(2^n *n)
 
 def printsubsets(s):
     final_list = []
