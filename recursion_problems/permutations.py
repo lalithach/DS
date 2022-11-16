@@ -1,3 +1,9 @@
+# This code uses recursion and everytime a recursive call is issued, 
+# clone of the slate and array are created. Reuse is not implemented here
+
+# permutations for n distinct elements in an array 
+# Time complexity: O(n! * n)
+
 def phelper(slate, arr):
     # slate represents the partial solution that carried further to subordinates
     # arr is the list of remaining choices for the subordinates
